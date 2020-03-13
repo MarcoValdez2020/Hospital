@@ -31,4 +31,22 @@ void  alta_paciente(nodo *& lista, int nums, string nom, int ed , string dir, ch
 	
 }
 
+void mostrar_todos_pacientes(nodo *lista){
+	nodo *actual= new nodo();
+	actual =lista;			
+		while(actual!=NULL){
+			int i;
+			gotoxy(17,4);cout<<"No. Seguro  "<<" Nombre    "<< "Edad  "<<" Sexo "<<"     Direccion     "<<"Fecha Ingreso    "<<"Enfermedad ";
+			gotoxy(18,5+i);cout<<actual->numseg;
+			gotoxy(30,5+i);cout<<actual->nombre;
+			gotoxy(40,5+i);cout<<actual->edad;
+			gotoxy(47,5+i);cout<<actual->sexo;
+			gotoxy(57,5+i);cout<<actual->direccion;
+			gotoxy(72,5+i);cout<<actual->fechaingreso;
+			gotoxy(88,5+i);cout<<actual->enfermedad;
+			actual=actual->siguiente;
+			i=i+1;
+		}		
+}
+
 
