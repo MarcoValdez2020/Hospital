@@ -15,7 +15,7 @@ main(){
 	int dhosp;
 	char sexo, res;
 
-	do{// se implementara una funcion para crear un menú
+	do{// se implementara una funcion para crear un menÃº
 		system("cls");
 		gotoxy(17,6);
 		cout<<"1) Alta Paciente"<<endl;
@@ -46,6 +46,32 @@ main(){
 				}while(res=='s'|| res=='S');
 			break;
 			case 2://Se implementaran las funciones buscar pacinetes (mostrar todos o buscar 1)
+				do{
+					system("cls");
+					gotoxy(17,5);cout<<"1) Consultar todos los pacientes";
+					gotoxy(17,7);cout<<"2) Consulta de un Paciente";
+					gotoxy(17,9);cout<<"3) Regresrar";
+					gotoxy(17,11);cin>>opc;
+					switch(opc){
+						case 1:
+							system("cls");
+							if(lista!=NULL){
+								mostrar_todos_pacientes(lista);
+								getch();
+							}else {
+								gotoxy(7,3);cout<<"La lista esta vacia!";
+								getch();
+							}
+						break;
+						case 2:
+						break;
+						case 3:
+						break;
+						default: 
+						cout<<"Opcion incorrecta!! ";
+				}
+			getch();
+		}while(opc!=3);
 			break;
 			case 3://Se implemetara la funcion baja de pacientes				
 			break;
