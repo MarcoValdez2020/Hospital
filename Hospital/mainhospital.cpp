@@ -17,6 +17,8 @@ main(){
 
 	do{
 		system("cls");
+		tipomenu=1;
+		graficar_menu(tipomenu);
 		gotoxy(17,6);
 		cout<<"1) Alta Paciente"<<endl;
 		gotoxy(17,8);
@@ -31,6 +33,8 @@ main(){
 			case 1:
 				do{
 					system("cls");
+					tipomenu=2;
+					graficar_menu(tipomenu);
 					gotoxy(17,4);cout<<"No. Seguro  "<<" Nombre    "<< "Edad  "<<" Sexo "<<"     Direccion     "<<"Fecha Ingreso    "<<"Enfermedad ";
 					gotoxy(17,5);cin>>numseg;
     				gotoxy(30,5);cin>>nombre;	
@@ -48,6 +52,8 @@ main(){
 			case 2:
 				do{
 					system("cls");
+					tipomenu=4;
+					graficar_menu(tipomenu);
 					gotoxy(17,5);cout<<"1) Consultar todos los pacientes";
 					gotoxy(17,7);cout<<"2) Consulta de un Paciente";
 					gotoxy(17,9);cout<<"3) Regresrar";
@@ -56,6 +62,8 @@ main(){
 						case 1:
 							system("cls");
 							if(lista!=NULL){
+								tipomenu=3;
+			        			graficar_menu(tipomenu);
 								mostrar_todos_pacientes(lista);
 								getch();
 							}else {
@@ -66,9 +74,13 @@ main(){
 						case 2:
 							system("cls");
 							if(lista!=NULL){
+								tipomenu=5;
+			        			graficar_menu(tipomenu);
 								gotoxy(17,5);cout<<"Ingrese el numero de seguro del paciente que desea buscar:";
 								gotoxy(17,7);cin>>numseg;
 								system("cls");
+								tipomenu=3;
+			        			graficar_menu(tipomenu);
 								buscar_paciente(lista,numseg);
 								getch();
 							}else {
@@ -87,11 +99,15 @@ main(){
 			case 3:
 				system("cls");
 				if(lista!=NULL){
+					tipomenu=6;
+		        	graficar_menu(tipomenu);
 					gotoxy(17,5);cout<<"Ingrese el numero de seguro del paciente que desea eliminar: ";
 					gotoxy(17,7);cin>>numseg;
 					gotoxy(17,9);cout<<"Ingrese los dias que el paciente estuvo hospitalizado: ";
 					gotoxy(17,11);cin>>dhosp;
 					system("cls");
+					tipomenu=7;
+		        	graficar_menu(tipomenu);
 		        	buscar_paciente(lista,numseg);
 					baja_paciente(lista,numseg,dhosp);
 					getch();
