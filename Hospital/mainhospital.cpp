@@ -64,6 +64,17 @@ main(){
 							}
 						break;
 						case 2:
+							system("cls");
+							if(lista!=NULL){
+								gotoxy(17,5);cout<<"Ingrese el numero de seguro del paciente que desea buscar:";
+								gotoxy(17,7);cin>>numseg;
+								system("cls");
+								buscar_paciente(lista,numseg);
+								getch();
+							}else {
+								gotoxy(7,3);cout<<"La lista esta vacia!";
+								getch();
+							}
 						break;
 						case 3:
 						break;
