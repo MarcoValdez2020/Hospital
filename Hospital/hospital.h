@@ -17,7 +17,7 @@ struct nodo{//creamos la estructura nodo
 
 
 void alta_paciente(nodo *&, int, string, int, string, char, string, int);//funcion para dar de alta un paciente
-
+void mostrar_todos_pacientes(nodo *);
 
 
 
