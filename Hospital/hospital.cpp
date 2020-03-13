@@ -49,4 +49,25 @@ void mostrar_todos_pacientes(nodo *lista){
 		}		
 }
 
+void buscar_paciente(nodo *lista, int nums){
+    bool band=false;
+	while (lista!=NULL){
+		if (nums==(lista->numseg)){
+			gotoxy(17,4);cout<<"No. Seguro  "<<" Nombre    "<< "Edad  "<<" Sexo "<<"     Direccion     "<<"Fecha Ingreso    "<<"Enfermedad ";
+			gotoxy(18,5);cout<<lista->numseg;
+			gotoxy(30,5);cout<<lista->nombre;
+			gotoxy(40,5);cout<<lista->edad;
+			gotoxy(47,5);cout<<lista->sexo;
+			gotoxy(57,5);cout<<lista->direccion;
+			gotoxy(72,5);cout<<lista->fechaingreso;
+			gotoxy(88,5);cout<<lista->enfermedad;
+			band=true;
+		}
+		lista=lista->siguiente;
+	}
+	if (band==false){
+			gotoxy(18,5);cout<<"EL pacinete no se encontro!!";
+		}
+	
+}
 
