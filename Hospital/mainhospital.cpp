@@ -15,7 +15,7 @@ main(){
 	int dhosp;
 	char sexo, res;
 
-	do{// se implementara una funcion para crear un menú
+	do{
 		system("cls");
 		gotoxy(17,6);
 		cout<<"1) Alta Paciente"<<endl;
@@ -45,7 +45,7 @@ main(){
 					system("cls");
 				}while(res=='s'|| res=='S');
 			break;
-			case 2://Se implementaran las funciones buscar pacinetes (mostrar todos o buscar 1)
+			case 2:
 				do{
 					system("cls");
 					gotoxy(17,5);cout<<"1) Consultar todos los pacientes";
@@ -84,7 +84,21 @@ main(){
 			getch();
 		}while(opc!=3);
 			break;
-			case 3://Se implemetara la funcion baja de pacientes				
+			case 3:
+				system("cls");
+				if(lista!=NULL){
+					gotoxy(17,5);cout<<"Ingrese el numero de seguro del paciente que desea eliminar: ";
+					gotoxy(17,7);cin>>numseg;
+					gotoxy(17,9);cout<<"Ingrese los dias que el paciente estuvo hospitalizado: ";
+					gotoxy(17,11);cin>>dhosp;
+					system("cls");
+		        	buscar_paciente(lista,numseg);
+					baja_paciente(lista,numseg,dhosp);
+					getch();
+				}else {
+					gotoxy(7,3);cout<<"La lista esta vacia!";
+					getch();
+				}				
 			break;
 			case 4:
 				gotoxy(5,18);
@@ -95,4 +109,5 @@ main(){
 		}
 	}while(opc!=4);
 }
+
 

@@ -31,6 +31,7 @@ void  alta_paciente(nodo *& lista, int nums, string nom, int ed , string dir, ch
 	
 }
 
+
 void mostrar_todos_pacientes(nodo *lista){
 	nodo *actual= new nodo();
 	actual =lista;			
@@ -48,6 +49,7 @@ void mostrar_todos_pacientes(nodo *lista){
 			i=i+1;
 		}		
 }
+
 
 void buscar_paciente(nodo *lista, int nums){
     bool band=false;
@@ -71,3 +73,49 @@ void buscar_paciente(nodo *lista, int nums){
 	
 }
 
+
+void baja_paciente(nodo *&lista, int nums, int dhosp){
+		float total;
+		if (nums==(lista->numseg)){
+			switch(lista->enfermedad){
+				case 1:	
+					total=(dhosp*350);
+				break;	
+				case 2:
+					total=(dhosp*425.80);	
+				break;
+				case 3:	
+					total=(dhosp*796);
+				break;
+				case 4:	
+					total=(dhosp*1610.1);
+				break;
+				default:
+					cout<<"Enfermedad no encontrada";
+			}	
+			gotoxy(18,7);cout<<"Dias Hospitalizado:  "<<dhosp;
+			gotoxy(18,9);cout<<"El totala a pagar es: "<<total<<"$";
+		}
+		if(lista!=NULL){
+			nodo *aux_borrar;
+			nodo *anterior=NULL;
+			aux_borrar=lista;
+			while((aux_borrar!=NULL)&&(aux_borrar->numseg!=nums)){
+				anterior = aux_borrar;
+				aux_borrar=aux_borrar->siguiente;
+			}
+		if(aux_borrar==NULL){
+			gotoxy(7,5);
+			cout<<"El Paciente no existe";
+		}else if(anterior==NULL){
+			lista=lista->siguiente;
+			delete aux_borrar;
+		}else {
+			anterior ->siguiente=aux_borrar->siguiente;
+			delete aux_borrar;
+		}	
+		
+		}
+	
+	
+}
